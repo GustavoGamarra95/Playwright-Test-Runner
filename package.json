@@ -1,0 +1,46 @@
+{
+  "name": "playwright-test-runner",
+  "version": "1.0.0",
+  "description": "Ejecutor de pruebas Playwright con interfaz web",
+  "scripts": {
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "node dist/server.js",
+    "dev": "ts-node src/server.ts",
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report",
+    "setup": "node setup.js",
+    "package": "node package.js",
+    "postinstall": "npm run setup"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "glob": "^8.1.0",
+    "tests": "^0.4.2",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.54.1",
+    "@types/express": "^4.17.23",
+    "@types/glob": "^8.1.0",
+    "@types/node": "^20.19.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3",
+    "pkg": "^5.8.1"
+  },
+  "bin": "dist/server.js",
+  "pkg": {
+    "targets": [
+      "node18-win-x64",
+      "node18-linux-x64",
+      "node18-macos-x64"
+    ],
+    "assets": [
+      "node_modules/**/*",
+      "dist/**/*"
+    ],
+    "outputPath": "dist-executable"
+  }
+}
