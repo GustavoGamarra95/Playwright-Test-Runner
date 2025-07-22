@@ -1,0 +1,339 @@
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1, h3 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.test-selection, .results, .artifacts-section {
+    margin-bottom: 25px;
+    background-color: #fcfcfc;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e0e0e0;
+}
+
+.test-controls {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.test-controls button {
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    color: white;
+    font-weight: bold;
+}
+
+.test-controls button.select-all {
+    background-color: #28a745;
+}
+
+.test-controls button.select-all:hover {
+    background-color: #218838;
+    transform: translateY(-1px);
+}
+
+.test-controls button.deselect-all {
+    background-color: #dc3545;
+}
+
+.test-controls button.deselect-all:hover {
+    background-color: #c82333;
+    transform: translateY(-1px);
+}
+
+.test-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.test-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 15px;
+    background-color: #f0f4f7;
+    border-radius: 8px;
+    border: 1px solid #e9edf1;
+    transition: background-color 0.2s ease;
+}
+
+.test-item:hover {
+    background-color: #e6eff5;
+}
+
+.test-item input[type="checkbox"] {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.test-item label {
+    cursor: pointer;
+    flex-grow: 1;
+    font-size: 16px;
+    color: #34495e;
+}
+
+.buttons {
+    margin-bottom: 25px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.run-test {
+    background-color: #28a745;
+}
+
+.run-test:hover {
+    background-color: #218838;
+}
+
+.run-all {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.run-all:hover {
+    background-color: #e0a800;
+}
+
+.view-report {
+    background-color: #007bff;
+}
+
+.view-report:hover {
+    background-color: #0056b3;
+}
+
+#testOutput {
+    background-color: #f8f9fa;
+    padding: 18px;
+    border-radius: 8px;
+    white-space: pre-wrap;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+    color: #495057;
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #e9ecef;
+}
+
+.artifacts-section h3 {
+    margin-bottom: 15px;
+}
+
+.artifact-group {
+    margin-bottom: 10px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fefefe;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.artifact-group-summary {
+    display: block;
+    padding: 12px 15px;
+    background-color: #e9f5ff;
+    color: #0056b3;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    border-bottom: 1px solid #dcdcdc;
+    transition: background-color 0.2s ease;
+}
+
+.artifact-group-summary:hover {
+    background-color: #dbeeff;
+}
+
+.artifact-group-summary::after {
+    content: '▼';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.2s ease;
+}
+
+.artifact-group[open] > .artifact-group-summary::after {
+    content: '▲';
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.artifact-group-content {
+    padding: 10px 15px;
+    background-color: #ffffff;
+    border-top: 1px solid #f0f0f0;
+}
+
+.artifact-sub-group {
+    margin-top: 8px;
+    margin-bottom: 5px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    background-color: #f8f8f8;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.artifact-sub-group-summary {
+    display: block;
+    padding: 10px 12px;
+    background-color: #f0f0f0;
+    color: #444;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.2s ease;
+    font-size: 14px;
+}
+
+.artifact-sub-group-summary:hover {
+    background-color: #e8e8e8;
+}
+
+.artifact-sub-group-summary::after {
+    content: '▶';
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg);
+    transition: transform 0.2s ease;
+}
+
+.artifact-sub-group[open] > .artifact-sub-group-summary::after {
+    content: '▼';
+    transform: translateY(-50%) rotate(90deg);
+}
+
+.artifact-sub-group-content {
+    padding: 8px 12px;
+    background-color: #ffffff;
+    border-top: 1px solid #f8f8f8;
+}
+
+.artifact-item {
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.artifact-item:last-child {
+    border-bottom: none;
+}
+
+.artifact-item a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    display: block;
+    transition: color 0.2s ease;
+}
+
+.artifact-item a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+.status {
+    margin-top: 25px;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.status.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.status.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.status.pending {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .test-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .test-controls button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

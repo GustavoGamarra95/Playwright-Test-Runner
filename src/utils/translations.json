@@ -1,0 +1,129 @@
+import fs from 'fs';
+import path from 'path';
+
+const translations = {
+  en: {
+    sauceDemo: {
+      title: "Sauce Demo",
+      login: {
+        username: "Username",
+        password: "Password",
+        loginButton: "Login",
+        errorMessages: {
+          lockedOut: "Epic sadface: Sorry, this user has been locked out."
+        }
+      },
+      products: {
+        title: "Products",
+        addToCart: "Add to cart",
+        remove: "Remove",
+        cart: "Cart",
+        checkout: "Checkout"
+      }
+    },
+    testRunner: {
+      title: "Playwright Test Runner",
+      controls: {
+        selectAll: "Select All",
+        deselectAll: "Deselect All",
+        runSelected: "Run Selected Tests",
+        runHeaded: "Run Headed",
+        runAll: "Run All",
+        viewReport: "View Report"
+      },
+      sections: {
+        availableTests: "Available Tests:",
+        testOutput: "Test Output:",
+        artifacts: "Generated Artifacts:"
+      },
+      messages: {
+        noTests: "No tests run yet.",
+        noArtifacts: "No artifacts generated yet."
+      }
+    }
+  },
+  es: {
+    sauceDemo: {
+      title: "Sauce Demo",
+      login: {
+        username: "Usuario",
+        password: "Contraseña",
+        loginButton: "Iniciar sesión",
+        errorMessages: {
+          lockedOut: "Error épico: Lo sentimos, este usuario ha sido bloqueado."
+        }
+      },
+      products: {
+        title: "Productos",
+        addToCart: "Añadir al carrito",
+        remove: "Eliminar",
+        cart: "Carrito",
+        checkout: "Pagar"
+      }
+    },
+    testRunner: {
+      title: "Ejecutor de Pruebas Playwright",
+      controls: {
+        selectAll: "Seleccionar Todo",
+        deselectAll: "Deseleccionar Todo",
+        runSelected: "Ejecutar Pruebas Seleccionadas",
+        runHeaded: "Ejecutar con Navegador",
+        runAll: "Ejecutar Todo",
+        viewReport: "Ver Informe"
+      },
+      sections: {
+        availableTests: "Pruebas Disponibles:",
+        testOutput: "Salida de Pruebas:",
+        artifacts: "Artefactos Generados:"
+      },
+      messages: {
+        noTests: "No hay pruebas ejecutadas aún.",
+        noArtifacts: "No hay artefactos generados aún."
+      }
+    }
+  },
+  pt: {
+    sauceDemo: {
+      title: "Sauce Demo",
+      login: {
+        username: "Usuário",
+        password: "Senha",
+        loginButton: "Entrar",
+        errorMessages: {
+          lockedOut: "Erro épico: Desculpe, este usuário foi bloqueado."
+        }
+      },
+      products: {
+        title: "Produtos",
+        addToCart: "Adicionar ao carrinho",
+        remove: "Remover",
+        cart: "Carrinho",
+        checkout: "Finalizar"
+      }
+    },
+    testRunner: {
+      title: "Executor de Testes Playwright",
+      controls: {
+        selectAll: "Selecionar Tudo",
+        deselectAll: "Desmarcar Tudo",
+        runSelected: "Executar Testes Selecionados",
+        runHeaded: "Executar com Navegador",
+        runAll: "Executar Todos",
+        viewReport: "Ver Relatório"
+      },
+      sections: {
+        availableTests: "Testes Disponíveis:",
+        testOutput: "Saída dos Testes:",
+        artifacts: "Artefatos Gerados:"
+      },
+      messages: {
+        noTests: "Nenhum teste executado ainda.",
+        noArtifacts: "Nenhum artefato gerado ainda."
+      }
+    }
+  }
+};
+
+// Save translations to a file
+const savePath = path.join(process.cwd(), 'src', 'translations.json');
+fs.writeFileSync(savePath, JSON.stringify(translations, null, 2));

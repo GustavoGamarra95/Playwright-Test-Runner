@@ -1,0 +1,1 @@
+{"version":3,"file":"test-data.js","sourceRoot":"","sources":["../../../tests/data/test-data.ts"],"names":[],"mappings":";;;AAAa,QAAA,QAAQ,GAAG;IACpB,OAAO,EAAE,2BAA2B;IACpC,KAAK,EAAE;QACH,QAAQ,EAAE;YACN,QAAQ,EAAE,eAAe;YACzB,QAAQ,EAAE,cAAc;SAC3B;KACJ;IACD,QAAQ,EAAE;QACN,QAAQ,EAAE,qBAAqB;QAC/B,SAAS,EAAE,uBAAuB;KACrC;CACJ,CAAC"}

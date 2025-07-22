@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejecutor de Pruebas Playwright</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .test-controls button:first-child {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .test-controls button:last-child {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .test-controls button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Ejecutor de Pruebas Playwright</h1>
+
+    <div class="test-selection">
+        <h3>Pruebas Disponibles:</h3>
+        <div class="test-controls">
+            <button onclick="selectAllTests()">Seleccionar Todas</button>
+            <button onclick="deselectAllTests()">Deseleccionar Todas</button>
+        </div>
+        <div id="testList" class="test-list">
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button class="run-test" onclick="runSelectedTests('test')">Ejecutar Seleccionadas</button>
+        <button class="run-test" onclick="runSelectedTests('test:headed')">Ejecutar en Modo Gráfico</button>
+        <button class="run-all" onclick="runAllTests()">Ejecutar Todas</button>
+        <button class="view-report" onclick="viewReport()">Ver Reporte</button>
+    </div>
+
+    <div class="results">
+        <h3>Salida de Pruebas:</h3>
+        <pre id="testOutput">Aún no se han ejecutado pruebas.</pre>
+    </div>
+
+    <div class="artifacts-section">
+        <h3>Artefactos Generados:</h3>
+        <div id="artifactList" class="artifact-list">
+            Aún no se han generado artefactos.
+        </div>
+    </div>
+
+    <div id="status"></div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
