@@ -1,2 +1,3 @@
 playwright.config.ts
 tsconfig.json
+.env
